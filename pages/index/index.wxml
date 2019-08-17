@@ -1,0 +1,28 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+<!-- 搜索框 -->
+  <view class="header">
+    <image src="../../assets/plus.png" class="plus" bindtap="addTodoHandler"></image>
+    <input placeholder="anthing here" class="new-todos" value="{{ input }}"  bindinput="inputChangeHandler" bindconfirm="addTodoHandler"></input>
+  </view>
+  <block wx:if="{{ todos.length }}">
+    <view class="todos">
+      <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}" data-index="{{ index }}" bindtap="toggleTodoHandler">
+        <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"></icon>
+        <text class="name">{{ item.name }}</text>
+        <icon class="remove"  type="clear" size="16" catchtap="removeTodoHandler" data-index="{{ index }}"></icon>
+      </view>
+    </view>
+    <view class="footer">
+      <text bindtap="toggleAllHandler">toggole all</text>
+      <text>{{ leftCount }} left item</text>
+      <text bindtap="clearCompletedHandler">clear complete</text>
+    </view> 
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">Congratulations!</text>
+      <text class="content">There's no more work left.</text>
+    </view>
+  </block>
+</view>

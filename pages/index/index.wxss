@@ -1,0 +1,80 @@
+/* pages/index/index.wxss */
+.header{
+  border: 1rpx solid #e0e0e0;
+  box-shadow: 0 0 5rpx #e0e0e0;
+  padding: 20rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.header .plus{
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 20rpx;
+}
+
+.header .new-todos{
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.todos{
+  border: 1rpx solid #e0e0e0;
+}
+
+.todos .item{
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todos .item:last-child{
+  border-bottom: none;
+}
+
+.todos .item .checkbox{
+  margin-right: 20rpx;
+}
+
+.todos .item .name{
+  flex: 1;
+  font-size: 30rpx;
+  color: #444;
+}
+
+.todos .item.completed .name{
+  text-decoration: line-through;
+  color: #999;
+}
+
+.footer{
+  font-size: 26rpx;
+  color: #777;
+  margin: 30rpx 0;
+  padding: 0 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty .title {
+  font-size: 60rpx;
+  margin: 200rpx 50rpx 50rpx;
+  color: #444;
+}
+
+.empty .content {
+  color: #666;
+  text-align: center;
+}
+
+
